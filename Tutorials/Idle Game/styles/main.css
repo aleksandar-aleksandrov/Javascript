@@ -1,0 +1,26 @@
+#game-time{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#income{
+    position: relative;
+    top: -70;
+    float: right;
+}
+
+#powerUpOptions{
+    text-align: center;
+    margin-top: 30px;
+    list-style: none;
+}
+
+#powerUpOptions li{
+    width: 100;
+    height: 100;
+    cursor: pointer;
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 20px;
+}
