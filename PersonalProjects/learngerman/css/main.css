@@ -1,0 +1,122 @@
+html, body {
+    color: #DFDCE3;
+    background-color: #4D2D73;
+
+}
+
+.btn-hidden{
+    display: none;
+}
+
+/* init.html */
+
+.init-container{
+    margin-top: 30%;
+    text-align: center;
+}
+
+
+.btn-init{
+    font-size: 2em;
+    margin-top: 4%;
+
+}
+
+#btn-main-no{
+    margin-left: 7%;
+}
+
+
+/* choose-level.html */
+
+.level-container{
+    margin-top: 20%;
+    text-align: center;
+}
+
+.btn-level{
+    margin-top: 8%;
+    font-size: 2.5em;
+    width: 27%;
+    height: 280px;
+}
+
+.button-group{
+    margin-left: 15%;
+}
+
+
+
+/* round1pregame*/
+
+.round1-container{
+    margin-top: 20%;
+    text-align: center;
+}
+
+
+#btn-ready{
+    margin-top: 4%;
+    width: 70%;
+    font-size: 3em;
+}
+
+
+/* round 1 game */
+
+.countdown-timer{
+    height: 100px;
+    width: 100px;
+    border: 5px solid red;
+    border-radius: 50%;
+    color: red;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 2em;
+    background-color: white;
+}
+
+
+/* Animated Blinking Cursor */
+
+.init-title{
+    display: inline;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.level-text{
+    display: inline;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.round1-pregame-text{
+    display: inline;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+
+.typed-cursor{
+    font-size: 4em;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
