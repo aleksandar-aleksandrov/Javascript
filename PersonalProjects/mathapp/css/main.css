@@ -54,3 +54,12 @@ html, body, .container-fluid{
     margin-right: 1%;
     margin-bottom: 3%;
 }
+
+.phone-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.phone-image-margin{
+    margin-top: 15em;
+}
