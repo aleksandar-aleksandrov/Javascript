@@ -1,0 +1,78 @@
+<div class="row level-points-row">
+    <div class="container-info">
+        <div class="col-md-3">Level: {{level}}</div>
+        <div class="col-md-3 col-md-offset-6 right-align">Points: {{points}}</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 round-header col-md-offset-3">
+        <h1 class="round-title">Round 2</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-2 roboto-font">
+        <canvas id="round-two-canvas" height="300px"></canvas>
+        <div class="alert" id="result" ng-disabled="isShown"></div>
+        <div class="div-cont">
+            <button class="btn btn-success btn-cont" ng-click="goRoundThree()">Continue</button>
+        </div>
+    </div>
+    <div class="col-md-6 roboto-font">
+        <div class="row">
+            <h3>Description:</h3>
+            <p class="lead">{{description}}</p>
+            
+            <h3>Word Length: {{length}}</h3>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 col-md-offset-1">
+                <h3 id="searched-word">{{searchedWord}}</h3>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="buttons">
+                <div class="upper-buttons">
+                    <button class="btn btn-submit" id="Q" ng-click="addLetter($event)">Q</button>
+                    <button class="btn btn-submit" id="W" ng-click="addLetter($event)">W</button>
+                    <button class="btn btn-submit" id="E" ng-click="addLetter($event)">E</button>
+                    <button class="btn btn-submit" id="R" ng-click="addLetter($event)">R</button>
+                    <button class="btn btn-submit" id="T" ng-click="addLetter($event)">T</button>
+                    <button class="btn btn-submit" id="Y" ng-click="addLetter($event)">Y</button>
+                    <button class="btn btn-submit" id="U" ng-click="addLetter($event)">U</button>
+                    <button class="btn btn-submit" id="I" ng-click="addLetter($event)">I</button>
+                    <button class="btn btn-submit" id="O" ng-click="addLetter($event)">O</button>
+                    <button class="btn btn-submit" id="P" ng-click="addLetter($event)">P</button>
+                    <button class="btn btn-submit" id="Ü" ng-click="addLetter($event)">Ü</button>
+                </div>
+                <div class="middle-buttons">
+                    <button class="btn btn-submit" id="A" ng-click="addLetter($event)">A</button>
+                    <button class="btn btn-submit" id="S" ng-click="addLetter($event)">S</button>
+                    <button class="btn btn-submit" id="D" ng-click="addLetter($event)">D</button>
+                    <button class="btn btn-submit" id="F" ng-click="addLetter($event)">F</button>
+                    <button class="btn btn-submit" id="G" ng-click="addLetter($event)">G</button>
+                    <button class="btn btn-submit" id="H" ng-click="addLetter($event)">H</button>
+                    <button class="btn btn-submit" id="J" ng-click="addLetter($event)">J</button>
+                    <button class="btn btn-submit" id="K" ng-click="addLetter($event)">K</button>
+                    <button class="btn btn-submit" id="L" ng-click="addLetter($event)">L</button>
+                    <button class="btn btn-submit" id="Ö" ng-click="addLetter($event)">Ö</button>
+                    <button class="btn btn-submit" id="Ä" ng-click="addLetter($event)">Ä</button>
+                </div>
+                <div class="lower-buttons">
+                    <button class="btn btn-submit" id="Z" ng-click="addLetter($event)">Z</button>
+                    <button class="btn btn-submit" id="X" ng-click="addLetter($event)">X</button>
+                    <button class="btn btn-submit" id="C" ng-click="addLetter($event)">C</button>
+                    <button class="btn btn-submit" id="V" ng-click="addLetter($event)">V</button>
+                    <button class="btn btn-submit" id="B" ng-click="addLetter($event)">B</button>
+                    <button class="btn btn-submit" id="N" ng-click="addLetter($event)">N</button>
+                    <button class="btn btn-submit" id="M" ng-click="addLetter($event)">M</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

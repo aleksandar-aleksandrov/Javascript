@@ -1,0 +1,36 @@
+<div class="row level-points-row">
+    <div class="container-info">
+        <div class="col-md-3">Level: {{level}}</div>
+        <div class="col-md-3 col-md-offset-6 right-align">Points: {{points}}</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 round-header col-md-offset-3">
+        <h1 class="round-title">Round 3</h1>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 roboto-font">
+        <p class="words"></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 roboto-font">
+        <div class="sentences"  ng-repeat='sent in sentences'>
+            {{sent.firstPart}}
+            <input type="text" class="someClass">
+            {{sent.secondPart}}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 col-buttons roboto-font">
+        <button class="btn btn-success btn-check" ng-click="check()">Check</button>
+        <button class="btn btn-success btn-continue" ng-click="goGameOver()">Continue</button>
+    </div>
+</div>

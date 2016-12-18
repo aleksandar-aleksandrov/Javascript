@@ -1,16 +1,28 @@
-html, body {
-    color: #DFDCE3;
-    background-color: #4D2D73;
+/* MAIN HTML/CSS properties */
 
+html, body {
+    background-color: #4D2D73;
+    height: 100%;
+    width: 100%;
+    font-family: 'Lobster';
+    color: rgba(202, 203, 194, 1);
 }
 
-.btn-hidden{
+.roboto-font {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.hidden {
     display: none;
 }
 
-/* init.html */
+.level-points-row {
+    margin-top: 0.5em;
+}
 
-.init-container{
+/* BEGIN.HTML */
+
+.begin-container{
     margin-top: 30%;
     text-align: center;
 }
@@ -19,7 +31,6 @@ html, body {
 .btn-init{
     font-size: 2em;
     margin-top: 4%;
-
 }
 
 #btn-main-no{
@@ -27,79 +38,173 @@ html, body {
 }
 
 
-/* choose-level.html */
+/* CHOOSE-LEVEL.HTML */
 
 .level-container{
-    margin-top: 20%;
+    margin-top: 15%;
     text-align: center;
 }
 
 .btn-level{
-    margin-top: 8%;
-    font-size: 2.5em;
-    width: 27%;
-    height: 280px;
+    margin-top: 3em;
+    font-size: 2.3em;
+    width: 8em;
+    height: 6em;
 }
 
-.button-group{
-    margin-left: 15%;
+.button-group {
+    margin-left: 13em;
 }
 
 
+/* RULES.HTML */
 
-/* round1pregame*/
+.container-info{
+    font-size: 1.5em;
+}
 
-.round1-container{
-    margin-top: 20%;
+.container-rules{
+    margin-top: 10em;
     text-align: center;
 }
 
 
 #btn-ready{
-    margin-top: 4%;
-    width: 70%;
+    margin-top: 2em;
+    width: 10em;
     font-size: 3em;
 }
 
-
-/* round 1 game */
-
-.countdown-timer{
-    height: 100px;
-    width: 100px;
-    border: 5px solid red;
-    border-radius: 50%;
-    color: red;
-    text-align: center;
-    padding-top: 25px;
-    font-size: 2em;
-    background-color: white;
+.right-align{
+    text-align: right;
 }
 
 
+/* ROUND-1.HTML */
+
+
+.round-header{
+    text-align: center;
+    margin-bottom: 2%;
+}
+.round-title{
+    font-size: 5em;
+}
+
+.time-score{
+    font-size: 2em;
+}
+
+.time-text{ 
+    margin-left: 13%;
+}
+
+.round-one-area{
+    background-color: rgba(221, 211, 253, 0.3);
+    padding: 1em;
+    border-radius: 1em;
+}
+
+
+.german-words{
+    font-size: 2em;
+}
+
+.word-inputs {
+    margin-top: 1em;
+}
+
+.container-submit{
+    text-align: center;
+    font-size: 2em;
+}
+
+.alert-feedback{
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+/* Round Two */
+#round-two-canvas{
+    background-color: rgba(202, 203, 194, 1);
+    width: 100%;
+    margin-top: 0.7em;
+}
+
+
+.buttons{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.middle-buttons{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.lower-buttons{
+    margin-left: 5em;
+}
+
+#searched-word{
+    margin: 1em 0em 1.5em 5em;
+}
+
+.div-cont{
+    text-align: center;
+}
+
+.btn-cont{
+    font-size: 1.5em;
+}
+
+/* Round Three */
+.sentences{
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.words{
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.col-buttons{
+    text-align: center;
+    margin-top: 3em;
+}
+
+.btn-check{
+    font-size: 1.3em;
+}
+
+.btn-continue{
+    font-size: 1.3em;
+}
+
 /* Animated Blinking Cursor */
 
-.init-title{
+.begin-title{
     display: inline;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
 }
 
 .level-text{
     display: inline;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
 }
 
-.round1-pregame-text{
+.rules-text{
     display: inline;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
 }
 
 
 .typed-cursor{
-    font-size: 4em;
+    font-size: 3em;
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;

@@ -1,18 +1,37 @@
-angular.module('learn-german', ['ngRoute', 'learn-german.controllers'])
-    .config(['$routeProvider', function($routeProvider){
-        $routeProvider.when('/',{
-            templateUrl: 'views/init.html',
-            controller: 'InItController'
-        }).when('/choose-level',{
+var app = angular.module('learn-german', ['ngRoute', 'learn-german.controllers'])
+app.config(['$routeProvider', function($routeProvider){
+        $routeProvider.when('/', {
+            templateUrl: 'views/begin.html',
+            controller: 'BeginController'
+        }).when('/choose-level', {
             templateUrl: 'views/choose-level.html',
             controller: 'ChooseLevelController'
-        }).when('/first-round-pregame',{
-            templateUrl: 'views/round1-pregame.html',
+        }).when('/rules', {
+            templateUrl: 'views/rules.html',
+            controller: "RulesController"
+        }).when('/first-round', {
+            templateUrl: 'views/round-one.html',
             controller: "RoundOneController"
-        }).when('/first-round',{
-            templateUrl: 'views/round1.html',
-            controller: "RoundOneController"
+        }).when('/second-round', {
+            templateUrl: 'views/round-two.html',
+            controller: "RoundTwoController"
+        }).when('/third-round', {
+            templateUrl: 'views/round-three.html',
+            controller: "RoundThreeController"
+        }).when('/gameover', {
+            templateUrl: 'views/gameover.html',
+            controller: "GameOverController"
+        }).when('/error', {
+            templateUrl: 'views/error.html',
+            controller: 'ErrorController'
         }).otherwise({
             redirectTo: '/'
         })
     }])
+
+app.value('user', { 
+    level: 'Beginner',
+    levelNumerical: '1',
+    points: '0'
+
+ })

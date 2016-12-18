@@ -1,4 +1,4 @@
-<div class="level-container" ng-controller="ChooseLevelController">
+<div class="level-container">
     <div class="row">
         <div class="col-md-9">
             <div class="container">
@@ -8,10 +8,10 @@
     </div>
 
     <div class="row">
-        <div class="col-md-9 button-group">
-            <button class="btn btn-danger btn-level btn-hidden" id="btn-beginner" ng-click="chooseBeginner()">Beginner</button>
-            <button class="btn btn-primary btn-level btn-hidden" id="btn-intermediate" ng-click="chooseIntermediate()">Intermediate</button>
-            <button class="btn btn-success btn-level btn-hidden" id="btn-advanced" ng-click="chooseAdvanced()">Advanced</button>
+        <div class="col-md-9 col-md-offset-1 button-group">
+            <button class="btn btn-danger btn-level" id="btn-beginner" ng-click="chooseLevel($event)" ng-show="isShown">Beginner</button>
+            <button class="btn btn-primary btn-level" id="btn-intermediate" ng-click="chooseLevel($event)" ng-show="isShown">Intermediate</button>
+            <button class="btn btn-success btn-level" id="btn-advanced" ng-click="chooseLevel($event)" ng-show="isShown">Advanced</button>
         </div>
     </div>
 <div>
