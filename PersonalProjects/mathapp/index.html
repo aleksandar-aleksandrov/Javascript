@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,54 +9,58 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+
+    <!-- FAVICON -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
   <body>
-
     <div class="container-fluid">
+      <div class="row row-fluid no-float">
+        <!-- LEFT COLUMN -->
+        <div class="col-md-5 col-md-offset-1 left-column">
+          <!-- LOGO -->
+          <div class="main-text">
+            <span><img src="images/logo.png" class="logo" />athApp</span>
+          </div>
+          <!-- TITLE -->
+          <div class="sub-title">
+            <span>Improve Your Math Skills!</span>
+          </div>
+          <!-- EXPLANATION -->
+          <p class="explanation-text">Solve new problems. Reach new levels.<br/>Compare your results.<p>
+          <!-- GOOGLE PLAY -->
+          <a href="https://play.google.com/store/apps/details?id=com.svilcata.mathapp&hl=en">
+            <img src="images/google-play.png" class="google-play img-responsive" />
+          </a>
+			  </div>
 
-        <div class="row row-fluid no-float">
+        <!-- RIGHT COLUMN -->
+        <div class="col-md-6 right-column">
+          <!-- APP SCREENSHOTS -->
+          <div class="container-fluid">
+              <img src="images/android-phones.png" class="phone-image img-responsive" />
+          </div> 
+        </div>
 
-			    <div class="col-md-6 left-column">
+		  </div>
+    </div>
 
-            <div class="main-text">
-              <span><img src="images/logo.png" class="logo" />athApp</span>
-            </div>
-
-            <div class="sub-title">
-              <span>Improve Your Math Skills!</span>
-            </div>
-
-            <p class="explanation-text">Solve new problems. Reach new levels.<br/>Compare your results.<p>
-
-            <div class="google-play-redirect">
-              <a href="https://play.google.com/store/apps/details?id=com.svilcata.mathapp&hl=en">
-                <img src="images/google-play.png" class="google-play img-responsive" />
-              </a>
-            </div>
-
-			    </div>
-
-
-			    <div class="col-md-6 right-column">
-
-            <div class="container-fluid">
-                <img src="images/android-phones.png" class="phone-image img-responsive" />
-            </div> 
-            
-			    </div>
-
-		    </div>
-      </div>
-
+    <!-- JQUERY & BOOTSTRAP -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-  </body>
+</body>
 </html>
