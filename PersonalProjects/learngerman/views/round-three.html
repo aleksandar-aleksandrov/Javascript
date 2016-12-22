@@ -21,16 +21,34 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 roboto-font">
         <div class="sentences"  ng-repeat='sent in sentences'>
-            {{sent.firstPart}}
-            <input type="text" class="someClass">
-            {{sent.secondPart}}
+            <div class="table-responsive">
+                <table class="table table-sentences">
+                    <tr>
+                        <td>
+                            {{sent.firstPart}}
+                            <input type="text" class="input-missing-word" ng-disabled='isDisabled'>
+                            {{sent.secondPart}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3 col-buttons roboto-font">
-        <button class="btn btn-success btn-check" ng-click="check()">Check</button>
+        <button class="btn btn-success btn-check" ng-disabled='isDisabled' ng-click="check()">Check</button>
+        <button class="btn btn-success btn-check" ng-disabled='!isDisabled' ng-click="showAnswers()">Show Answers</button>
         <button class="btn btn-success btn-continue" ng-click="goGameOver()">Continue</button>
+    </div>
+</div>
+
+<div class="row roboto-font">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="alert alert-info alert-feedback hidden">
+
+        </div>
     </div>
 </div>

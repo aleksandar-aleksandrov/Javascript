@@ -1,5 +1,10 @@
 angular.module('learn-german.controllers')
     .controller('RoundOneController', ['$scope','$location', '$http', 'user', function($scope, $location, $http,user){
+        //Prevent from going back to redo rounds and skipping rounds
+        if(user.firstRound){
+            $location.path('/error')
+        }
+        
         //Round One Game
 
 
@@ -12,12 +17,9 @@ angular.module('learn-german.controllers')
         //Responsible for the state of the inputs
         $scope.isDisabled = false;
 
-        
-        //Generate words
-
-        //Initiate array for storage of the words
         var dict = [];
 
+        //Generate words
 
         //Send request to api
         //Send level of the user as param
@@ -28,27 +30,22 @@ angular.module('learn-german.controllers')
                 levelNumerical: user.levelNumerical
             }
         }).success(function(data){
-            console.log(data)
-            //If is successful, add the words to the array
-            for(var i = 0; i < data.length; i++){
-                dict.push({
-                    germanWord: data[i].german,
-                    englishWord: data[i].english
-                })
+            
+            if(data !== 'error'){
+                $scope.words = data
+                dict = data
+            } else {
+                location.path('/error')
             }
-            // Add the words to the scope
-            $scope.words = dict
+            
    
         }).error(function(data, status, headers, config){
-            console.log(error)
+            location.path('/error')
         })
         
         
         //FUNCTIONS
         
-
-        
-
         //Check the user inputs
         $scope.checkAnswers = function(){
              //Set button-check and inputs to disabled and button-continue to enabled
@@ -87,6 +84,7 @@ angular.module('learn-german.controllers')
         }
 
         $scope.goRound2 = function(){
+            user.firstRound = true
             $location.path('/second-round')
         }
 

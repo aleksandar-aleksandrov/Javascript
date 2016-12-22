@@ -4,8 +4,10 @@ html, body {
     background-color: #4D2D73;
     height: 100%;
     width: 100%;
-    font-family: 'Lobster';
     color: rgba(202, 203, 194, 1);
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Indie Flower', cursive;
+    margin-bottom: 3em;
 }
 
 .roboto-font {
@@ -23,31 +25,31 @@ html, body {
 /* BEGIN.HTML */
 
 .begin-container{
-    margin-top: 30%;
+    margin-top: 15em;
     text-align: center;
 }
 
 
 .btn-init{
     font-size: 2em;
-    margin-top: 4%;
+    margin-top: 2em;
 }
 
 #btn-main-no{
-    margin-left: 7%;
+    margin-left: 1em;
 }
 
 
 /* CHOOSE-LEVEL.HTML */
 
 .level-container{
-    margin-top: 15%;
+    margin-top: 10em;
     text-align: center;
 }
 
 .btn-level{
-    margin-top: 3em;
-    font-size: 2.3em;
+    margin-top: 2em;
+    font-size: 2em;
     width: 8em;
     height: 6em;
 }
@@ -182,29 +184,64 @@ html, body {
     font-size: 1.3em;
 }
 
+.table-sentences{
+    text-align: left;
+}
+
+.input-missing-word {
+    color: black;
+}
+
+/* GAMEOVER */
+
+.rotate{
+    margin-top: 1em;
+    font-size: 2em;
+    transform: rotate(340deg);
+}
+
+.text-lead{
+    margin-left: 3em;
+    margin-top: 2em;
+    font-size: 3em;
+}
+
+/* ERROR */
+
+.container-error{
+    text-align: center;
+    margin-top: 15em;
+}
+
+.btn-go-back{
+    margin-top: 2em;
+    font-size: 2em;
+}
+
 /* Animated Blinking Cursor */
 
 .begin-title{
     display: inline;
-    font-size: 3em;
+    font-size: 4em;
     font-weight: bold;
 }
 
 .level-text{
     display: inline;
-    font-size: 3em;
+    font-size: 4em;
     font-weight: bold;
+    padding-top: 1em;
 }
 
 .rules-text{
     display: inline;
-    font-size: 3em;
+    font-size: 4em;
     font-weight: bold;
 }
 
 
 .typed-cursor{
-    font-size: 3em;
+    font-size: 4em;
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;

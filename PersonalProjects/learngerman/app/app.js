@@ -29,9 +29,12 @@ app.config(['$routeProvider', function($routeProvider){
         })
     }])
 
+// USER DATA
 app.value('user', { 
     level: 'Beginner',
     levelNumerical: '1',
-    points: '0'
-
+    points: '0',
+    firstRound: false,
+    secondRound: false,
+    thirdRound: false
  })

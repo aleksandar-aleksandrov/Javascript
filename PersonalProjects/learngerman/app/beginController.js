@@ -1,5 +1,19 @@
 angular.module('learn-german.controllers')
-    .controller('BeginController', ['$scope', '$location', function($scope, $location){
+    .controller('BeginController', ['$scope', '$location', 'user', function($scope, $location, user){
+        // Reset User VARIABLES
+
+        function resetValues(){
+            user.level = 'Beginner'
+            user.levelNumerical = '1'
+            user.points = '0'
+            user.firstRound = false
+            user.secondRound = false
+            user.thirdRound = false
+        }
+
+        resetValues()
+
+
         //VARIABLES
 
         //Used for marking the moment at which the buttons should appear
@@ -18,7 +32,6 @@ angular.module('learn-german.controllers')
                 typeSpeed: 0,
                 onStringTyped: function() {
                     i++;
-                    console.log(i)
                     if(i === 2){
                         $scope.isShown = true
                         $scope.$apply()
@@ -47,7 +60,7 @@ angular.module('learn-german.controllers')
                     speed: 500
                 },
                 layout: 'bottom',
-                timeout: '1500'
+                timeout: '3000'
 
             })
         }

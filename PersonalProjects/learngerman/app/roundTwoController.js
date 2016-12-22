@@ -1,25 +1,34 @@
 angular.module('learn-german.controllers')
     .controller('RoundTwoController', ['$scope','$location', '$http','user', function($scope, $location, $http,user){
-        //Round Two
-
-        //VARIABLES
+        //Prevent from going back to redo rounds and skipping rounds
+        if(user.secondRound){
+            $location.path('/error')
+        }
+        
+        // ROUND TWO
+        
+        
+        // VARIABLES
 
         $scope.description = ''
         $scope.word = ''
         $scope.length = 0
         $scope.searchedWord = ''
-        $scope.drawState = 0
+
+        // Variables for canvas drawing
+
+        var drawState = 0
         $scope.isShown = false
-        var numOfHits = 0
         var canvas = document.getElementById('round-two-canvas')
         var ctx = canvas.getContext('2d')
+
         //Set User's Level and Points
         $scope.level = user.level
         $scope.points = user.points
 
         
-        //Send request to api
-        //Send level of the user as param
+        // Send request to api
+        // Send level of the user as param
         $http({
             url: 'api/roundTwo.php',
             method: 'post',
@@ -27,44 +36,52 @@ angular.module('learn-german.controllers')
                 levelNumerical: user.levelNumerical
             }
         }).success(function(data){
-            $scope.word = data.germanWord.toUpperCase()
-            $scope.description = data.desc
-            $scope.length = $scope.word.length
-            initString()
-            initCanvas()
+            if(data != 'error'){
+                $scope.word = data.germanWord.toUpperCase()
+                $scope.description = data.desc
+                $scope.length = $scope.word.length
+                initString()
+                initCanvas()
+            } else {
+                $location.path('/error')
+            }
+            
         }).error(function(data){
+            $location.path('/error')
         })
 
 
-        //FUNCTIONS
+        // FUNCTIONS
 
-        //SCOPE functions
+        // SCOPE functions
 
         $scope.addLetter = function(event){
+            //Get the letter
             var letter = $(event.target).attr("id")
             var isApparent = false;
-            console.log($scope.word)
-            console.log(letter)
+
+            //Find and replace in the word
             for(var i = 0; i < $scope.word.length; i++){
                 if(letter == $scope.word.charAt(i)){
-                    console.log("huer")
                     $scope.searchedWord = replaceAt($scope.searchedWord, i, letter)
                     isApparent = true
-                    ++numOfHits
                 }
             }
-            
+
+            //If not present, draw next part of the hangman
             if(!isApparent){
-                drawNext(++$scope.drawState)
+                drawNext(++drawState)
             }
 
-            if(numOfHits == $scope.word.length){
+            //If found, give points
+            if($scope.searchedWord === $scope.word){
                 finishGame(true)
             }
             
         }
 
         $scope.goRoundThree = function() {
+            user.secondRound = true
             $location.path('/third-round')
         }
 
