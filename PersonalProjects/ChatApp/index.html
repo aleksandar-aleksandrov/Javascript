@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="chatApp">
+<html lang="en" ng-app="chat-app">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,15 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Additional Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,17 +26,33 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
         <div ng-view></div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery -->
     <script src="js/jquery-3.1.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- BOOTSTRAP -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- ANGULARJS -->
     <script src="js/angular.js"></script>
+
+    <!-- ANGULAR ROUTE -->
     <script src="js/angular-route.js"></script>
+
+    <!-- ANGULAR COOKIES -->
+    <script src="js/angular-cookies.js"></script>
+
+    <!-- APP.JS -->
     <script src="app/app.js"></script>
-    <script src="app/login-controller.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="app/controllers/mainController.js"></script>
+    <script src="app/controllers/chatController.js"></script>
+    <!-- SERVICES -->
+
+
   </body>
 </html>
