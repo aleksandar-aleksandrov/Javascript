@@ -61,7 +61,7 @@ angular.module('learn-german.controllers')
             $scope.points = user.points
 
             //Display a message to the user
-            var message = "You got " + points + "/5 correct. You gained " + p + " points."
+            var message = "You got " + points + "/5 correct. You gained " + (points*20) + " points."
             var alert = angular.element(document.querySelector('.alert-feedback'))
             alert.removeClass('hidden')
             alert.html(message) 

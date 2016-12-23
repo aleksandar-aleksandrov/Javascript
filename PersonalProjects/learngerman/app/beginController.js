@@ -19,7 +19,7 @@ angular.module('learn-german.controllers')
         //Used for marking the moment at which the buttons should appear
         var i = 0;
         $scope.isShown = false;
-
+        var msg = "Hallo! Ich Habe Eine Frage ...", msg2 =  "Hey, I Have A Question. <br> Do You Want To Learn German?"
 
         //FUNCTIONS
 
@@ -28,7 +28,7 @@ angular.module('learn-german.controllers')
 
         $(function(){
             $(".begin-title").typed({
-                strings: ["Hallo! Ich Habe Eine Frage ...", "Hey, I Have A Question. <br> Do You Want To Learn German?"],
+                strings: [msg, msg2],
                 typeSpeed: 0,
                 onStringTyped: function() {
                     i++;

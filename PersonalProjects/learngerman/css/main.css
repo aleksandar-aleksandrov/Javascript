@@ -201,9 +201,25 @@ html, body {
 }
 
 .text-lead{
-    margin-left: 3em;
-    margin-top: 2em;
     font-size: 3em;
+}
+
+.container-end {
+    margin-top: 20em;
+    text-align: center;
+}
+
+
+.buttons-group{
+    margin-top: 3em;
+}
+
+.btn-share {
+    margin-left: 2em;
+    font-size: 2em;
+}
+.btn-restart {
+    font-size: 2em;
 }
 
 /* ERROR */
@@ -239,6 +255,11 @@ html, body {
     font-weight: bold;
 }
 
+
+.over-text{
+    display: inline;
+    font-size: 4em;
+}
 
 .typed-cursor{
     font-size: 4em;
