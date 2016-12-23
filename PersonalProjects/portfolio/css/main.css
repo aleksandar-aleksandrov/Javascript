@@ -4,7 +4,9 @@ html, body {
     background-color: rgba(33,33,33,0.96);
     background-color: ghostwhite;
     color: rgba(117, 117, 117, 1);
+    font-family: 'Roboto Slab', serif;
 }
+
 
 
 .logo-container{
@@ -52,6 +54,8 @@ html, body {
     color: rgba(176, 176, 176, 1);
     color: #3c3c3c;
     color: rgba(33,33,33,0.96);
+    font-family: 'Aref Ruqaa', serif;
+    font-family: 'Indie Flower', cursive;
 }
 
 
@@ -67,8 +71,8 @@ html, body {
     font-size: 1.5em;
 }
 
-textarea {
-    font-size: 20px;
+.txtarea{
+    font-size: 1.5em;
 }
 
 .contact-button{
@@ -84,11 +88,17 @@ textarea {
     font-size: 3.5em;
 }
 
+textarea {
+   font-family: inherit;
+   font-size: inherit;
+}
+
 /* Projects */
 
 .projectBox{
     height: 20em;
     background-color: dimgrey;
+    color: black;
     margin-left: 6em;
     margin-bottom: 3em;
 }

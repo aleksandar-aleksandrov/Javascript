@@ -13,7 +13,11 @@ app.config(function($routeProvider){
     }).when('/', {
         redirectTo: 'about-me'
     }).when('/error', {
-        templateUrl: 'views/error.html'
+        templateUrl: 'views/error.html',
+        controller: 'ErrorController'
+    }).when('/project/id/:id/name/:name', {
+        templateUrl: 'views/project.html',
+        controller: 'ProjectController'
     }).otherwise({
         redirectoTo: 'error'
     })

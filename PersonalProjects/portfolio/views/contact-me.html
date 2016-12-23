@@ -1,36 +1,78 @@
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-7 col-md-offset-3">
         <div class="cont-heading">
             <h1 class="contact-h1">Contact Me</h1>
         </div>
     </div>
 </div>
 
+
+
 <div class="row">
     <div class="col-md-3 col-md-offset-3">
-        <div class="form-group">
-            <input type="email" class="form-control contact-input" placeholder="Your Email*">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control contact-input" placeholder="Your Name*">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control contact-input" placeholder="The Title*">
-        </div>
+        <form class="form-horizontal" role="form" method="post" action="index.php">
+            <div class="form-group">
+                <input type="email" class="form-control contact-input" ng-model="email" placeholder="Your Email...">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control contact-input" ng-model="name" placeholder="Your Name...">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control contact-input" ng-model="title" placeholder="Title">
+            </div>
+        </form>
     </div>
-    <div class="col-md-3">
-        <div class="form-group">
-            
-            <textarea class="form-control contaxt-txt" rows="8" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+    <div class="col-md-4">
+        <div class="form-group txtarea">
+            <textarea class="form-control contaxt-txt" rows="8" ng-model="message" placeholder="Your Message..." id="message" required data-validation-required-message="Please enter a message."></textarea>
             <p class="help-block text-danger"></p>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-7 col-md-offset-3">
         <div class="contact-button">
-            <button class="btn btn-submit btn-email">Send Me An Email!</button>
+            <button class="btn btn-submit btn-email" ng-click='sendEmail()'>Send Me An Email!</button>
         </div>
+    </div>
+</div>
+
+
+<!--
+<div class="row">
+    <div class="col-md-8 col-md-offset-3">
+        <form class="form-horizontal" role="form" method="post" action="index.php">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="4" name="message"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <! Will be used to display an alert to the user>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

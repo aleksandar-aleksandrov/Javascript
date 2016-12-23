@@ -1,14 +1,8 @@
 <div class="row">
-    <div class="col-md-3 col-md-offset-2 projectBox">dsaf</div>
-    <div class="col-md-3 projectBox">dsaf</div>
-    <div class="col-md-3 projectBox">fdasf</div>
-</div>
-
-
-<div class="row">
-    <div class="col-md-3 col-md-offset-2 projectBox">fdsaf</div>
-    <div class="col-md-3 projectBox">asdf</div>
-    <div class="col-md-3 projectBox">asdf</div>
+    <div class="container container-projects">
+        <div class="col-md-3 projectBox" ng-repeat="project in projects">
+            <a ng-href="#!/project/id/{{project.id}}/name/{{project.urlName}}">/project/id/{{project.id}}/name/{{project.name}}</a>
+    </div>
 </div>
 
 
