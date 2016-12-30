@@ -1,5 +1,5 @@
 angular.module('learn-german.controllers')
-    .controller('RulesController', ['$scope','$location', 'user', function($scope, $location, user){
+    .controller('RulesController', ['$scope','$location', 'centerElement', 'user', function($scope, $location, centerElement, user){
         // VARIABLES
 
         // Set User's Level and Points
@@ -9,6 +9,9 @@ angular.module('learn-german.controllers')
         $scope.isShown = false
         
         // FUNCTIONS
+
+        // Center Element Vertically
+        centerElement($(".container-rules"))
 
         // Function for the typing-of-string effect
         // TYPED.JS is used as additional library

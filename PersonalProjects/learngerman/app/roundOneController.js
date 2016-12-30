@@ -1,5 +1,5 @@
 angular.module('learn-german.controllers')
-    .controller('RoundOneController', ['$scope','$location', '$http', 'user', function($scope, $location, $http,user){
+    .controller('RoundOneController', ['$scope','$location', '$http', 'centerElement', 'user', function($scope, $location, $http, centerElement, user){
         //Prevent from going back to redo rounds and skipping rounds
         if(user.firstRound){
             $location.path('/error')
@@ -46,6 +46,9 @@ angular.module('learn-german.controllers')
         
         //FUNCTIONS
         
+        // Center Element Vertically
+        centerElement($(".first-round"))
+
         //Check the user inputs
         $scope.checkAnswers = function(){
              //Set button-check and inputs to disabled and button-continue to enabled

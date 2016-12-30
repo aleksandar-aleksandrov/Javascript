@@ -1,11 +1,14 @@
 angular.module('learn-german.controllers')
-        .controller('ChooseLevelController', ['$scope','$location', 'user', function($scope, $location, user){
+        .controller('ChooseLevelController', ['$scope','$location', 'centerElement', 'user', function($scope, $location, centerElement, user){
             //VARIABLES
 
             $scope.isShown = false
 
 
             //FUNCTIONS
+
+            // Center Element Vertically
+            centerElement($(".level-container"))
 
             //Function for the typing-of-string effect
             //TYPED.JS is used as additional library

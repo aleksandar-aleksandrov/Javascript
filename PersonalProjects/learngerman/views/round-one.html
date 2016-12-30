@@ -5,79 +5,82 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-6 round-header col-md-offset-3">
-        <h1 class="round-title">Round 1</h1>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-md-6 col-md-offset-3 round-one-area">
-        <div class="container roboto-font">
-            <div class="row">
-                <div class="col-md-3">
-                    <h2>German Word</h2>
-                    <hr />
-                    <p ng-repeat="word in words" class="german-words">
-                        {{word.germanWord}}
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <h2>English Translation</h2>
-                    <hr />
-                    <div class="word-inputs">
-                        <div class="form-group" id="divTrans1">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="translation1" ng-model="word1" ng-disabled="isDisabled">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" id="divTrans2">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="translation2" ng-model="word2" ng-disabled="isDisabled">
-                            </div>
-                        </div>
-                        <div class="form-group" id="divTrans3">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="translation3" ng-model="word3" ng-disabled="isDisabled">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" id="divTrans4">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="translation4" ng-model="word4" ng-disabled="isDisabled">
-                            </div>
-                        </div>
-
-                        <div class="form-group" id="divTrans5">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="translation5" ng-model="word5" ng-disabled="isDisabled">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="container-submit">
-                        <button class="btn btn-success" ng-click="checkAnswers()" ng-disabled="isDisabled">Check</button>
-                        <button class="btn btn-success" ng-click="goRound2()" ng-disabled="!isDisabled">Continue</button>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4 col-md-offset-1">
-                    <div class="alert alert-info alert-feedback hidden">
-
-                    </div>
-                </div>
-            </div>
+<div class="first-round">
+    <div class="row">
+        <div class="col-md-6 round-header col-md-offset-3">
+            <h1 class="round-title">Round 1</h1>
         </div>
-        
     </div>
+
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 round-one-area">
+            <div class="container roboto-font">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h2>German Word</h2>
+                        <hr />
+                        <p ng-repeat="word in words" class="german-words">
+                            {{word.germanWord}}
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2>English Translation</h2>
+                        <hr />
+                        <div class="word-inputs">
+                            <div class="form-group" id="divTrans1">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="translation1" ng-model="word1" ng-disabled="isDisabled">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" id="divTrans2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="translation2" ng-model="word2" ng-disabled="isDisabled">
+                                </div>
+                            </div>
+                            <div class="form-group" id="divTrans3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="translation3" ng-model="word3" ng-disabled="isDisabled">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" id="divTrans4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="translation4" ng-model="word4" ng-disabled="isDisabled">
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="divTrans5">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="translation5" ng-model="word5" ng-disabled="isDisabled">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="container-submit">
+                            <button class="btn btn-success" ng-click="checkAnswers()" ng-disabled="isDisabled">Check</button>
+                            <button class="btn btn-success" ng-click="goRound2()" ng-disabled="!isDisabled">Continue</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-1">
+                        <div class="alert alert-info alert-feedback hidden">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
 </div>

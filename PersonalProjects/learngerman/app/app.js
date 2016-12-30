@@ -38,3 +38,11 @@ app.value('user', {
     secondRound: false,
     thirdRound: false
  })
+
+app.factory('centerElement', [function(){
+     return function(element){
+        element.css("position","absolute")
+        element.css("top", Math.max(0, (($(window).height() - $(element).outerHeight()) / 3) + $(window).scrollTop()) + "px")
+        return this
+     }
+}])

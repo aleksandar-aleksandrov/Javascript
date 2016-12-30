@@ -1,5 +1,5 @@
 angular.module('learn-german.controllers')
-    .controller('BeginController', ['$scope', '$location', 'user', function($scope, $location, user){
+    .controller('BeginController', ['$scope', '$location', 'centerElement' ,'user', function($scope, $location, centerElement, user){
         // Reset User VARIABLES
 
         function resetValues(){
@@ -13,7 +13,6 @@ angular.module('learn-german.controllers')
 
         resetValues()
 
-
         //VARIABLES
 
         //Used for marking the moment at which the buttons should appear
@@ -22,6 +21,9 @@ angular.module('learn-german.controllers')
         var msg = "Hallo! Ich Habe Eine Frage ...", msg2 =  "Hey, I Have A Question. <br> Do You Want To Learn German?"
 
         //FUNCTIONS
+
+        // Center Element Vertically
+        centerElement($(".begin-container"))
 
         //Function for the typing-of-string effect
         //TYPED.JS is used as additional library

@@ -25,7 +25,6 @@ html, body {
 /* BEGIN.HTML */
 
 .begin-container{
-    margin-top: 15em;
     text-align: center;
 }
 
@@ -43,7 +42,6 @@ html, body {
 /* CHOOSE-LEVEL.HTML */
 
 .level-container{
-    margin-top: 10em;
     text-align: center;
 }
 
@@ -66,7 +64,6 @@ html, body {
 }
 
 .container-rules{
-    margin-top: 10em;
     text-align: center;
 }
 
@@ -93,13 +90,6 @@ html, body {
     font-size: 5em;
 }
 
-.time-score{
-    font-size: 2em;
-}
-
-.time-text{ 
-    margin-left: 13%;
-}
 
 .round-one-area{
     background-color: rgba(221, 211, 253, 0.3);
