@@ -12,7 +12,6 @@ html, body, .container-fluid{
 
 .left-column{
     height: 100%;
-    padding-top: 12em;
 }
 
 .logo{
@@ -26,6 +25,7 @@ html, body, .container-fluid{
     color:#2d2b2b;
     font-weight: bolder;
     font-size: 3.5em;
+    padding-top: 2em;
     margin-bottom: 2%;
 }
 
@@ -67,5 +67,4 @@ html, body, .container-fluid{
 .phone-image {
     max-width: 100%;
     height: auto;
-    margin-top: 6em;
 }
