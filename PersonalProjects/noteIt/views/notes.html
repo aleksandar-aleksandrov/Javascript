@@ -1,0 +1,57 @@
+<!-- NAVIGATION NOTES -->
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header pull-left">		
+            <a class="navbar-brand">Note.It</a>
+        </div>
+        <div class="pull-right">
+            <ul class="navbar-nav nav pull-right">
+                <li><a href="">{{email}}</a></li>
+                <li><a ng-click="logout()">Log Out</a></li>
+            </ul>
+        </div>
+    </div>	
+</div>
+<!-- NAVIGATION NOTES END -->
+
+<tr ng-repeat="data in filtered = 
+(list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                    <td>{{data.customerName}}</td>
+                    <td>{{data.addressLine1}}</td>
+                    <td>{{data.city}}</td>
+                    <td>{{data.state}}</td>
+                    <td>{{data.postalCode}}</td>
+                    <td>{{data.country}}</td>
+                    <td>{{data.creditLimit}}</td>
+                </tr
+
+<!-- NOTES SECTION -->		
+<div class="container container-notes">
+    <div class="row">
+        <div class="col-md-3 col-entries" >
+            <h4 class="text-center">Last 5 entries</h4>
+            <div class="list-group">
+                <a ng-click="noteClick(item.note)" class="list-group-item" 
+                ng-repeat = "item in list | startFrom:currentPage*pageSize | limitTo:pageSize">{{item.note}}</a>
+            </div>
+            <div class="pagination-group">
+                <button class="btn btn-default btn-round" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">&lt;&lt;</button>
+                <button class="btn btn-default btn-round" ng-disabled="currentPage >= list.length/pageSize - 1" ng-click="currentPage=currentPage+1">&gt;&gt;</button>
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+            <h3>Your entry...</h3>
+            <form method="get">
+                <textarea class="form-control" ng-model="note" id="enter" name="comment" cols="10" rows="20" placeholder="Your new note..."></textarea>
+                
+                <input type="submit" class="btn btn-success pull-right" id="btn-add-note" value="submit" ng-click="addNote()" />
+            </form>
+            <div class="alert" id="message-box">
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- NOTES SECTION END -->
