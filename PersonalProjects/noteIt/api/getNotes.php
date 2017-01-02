@@ -1,5 +1,6 @@
 <?php
     include("connection.php");
+    include("Note.php");
 
     $postdata = file_get_contents("php://input");
     $result = json_decode($postdata);
@@ -13,10 +14,12 @@
     $data = array();
 
     while($row = mysqli_fetch_assoc($result)) {
-        array_push($data, array(
+        /*array_push($data, array(
             "time" => $row['time'],
+            "title" => $row['title'],
             "note" => $row['note']
-        ));
+        ));*/
+        array_push($data, new Note($row['title'], $row['note'], '$email', $row['time']));
     }
 
     echo json_encode($data);

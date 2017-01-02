@@ -1,14 +1,13 @@
 <?php
     include("connection.php");
+    include("Note.php");
 
     $postdata = file_get_contents("php://input");
     $res = json_decode($postdata);
 
-    $note = $res->note;
-    $email = $res->email;
+    $note = new Note($res->title, $res->note, $res->email, 'n/a');
 
-    $sql = "INSERT INTO notes(email, note) VALUES ('$email', '$note')";
-
+    $sql = "INSERT INTO notes(email, note, title) VALUES ('$note->user', '$note->text', '$note->title')";
     $result = mysqli_query($conn, $sql);
 
     if($result) {

@@ -6,7 +6,7 @@
         </div>
         <div class="pull-right">
             <ul class="navbar-nav nav pull-right">
-                <li><a href="">{{email}}</a></li>
+                <li><a>{{email}}</a></li>
                 <li><a ng-click="logout()">Log Out</a></li>
             </ul>
         </div>
@@ -14,36 +14,38 @@
 </div>
 <!-- NAVIGATION NOTES END -->
 
-<tr ng-repeat="data in filtered = 
-(list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
-                    <td>{{data.customerName}}</td>
-                    <td>{{data.addressLine1}}</td>
-                    <td>{{data.city}}</td>
-                    <td>{{data.state}}</td>
-                    <td>{{data.postalCode}}</td>
-                    <td>{{data.country}}</td>
-                    <td>{{data.creditLimit}}</td>
-                </tr
+
 
 <!-- NOTES SECTION -->		
 <div class="container container-notes">
     <div class="row">
         <div class="col-md-3 col-entries" >
-            <h4 class="text-center">Last 5 entries</h4>
+            <h4 class="text-center">Last Entries</h4>
             <div class="list-group">
-                <a ng-click="noteClick(item.note)" class="list-group-item" 
-                ng-repeat = "item in list | startFrom:currentPage*pageSize | limitTo:pageSize">{{item.note}}</a>
+                <a ng-click="noteClick(item.text, item.title)" class="list-group-item a-notes" 
+                ng-repeat = "item in list | startFrom:currentPage*pageSize | limitTo:pageSize"
+                data-toggle="popover" title="{{item.text.slice(0,100)}}">
+                <span id="note-time">{{item.time.slice(0,10)}}</span> 
+                |
+                <span id="note-text">{{item.title.slice(0,20)}}</span>
+                
+                </a>
             </div>
             <div class="pagination-group">
                 <button class="btn btn-default btn-round" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">&lt;&lt;</button>
                 <button class="btn btn-default btn-round" ng-disabled="currentPage >= list.length/pageSize - 1" ng-click="currentPage=currentPage+1">&gt;&gt;</button>
             </div>
-            
+            <div id="info-text">
+                <span>* Double click to reload an old note</span>
+                <br />
+                <span>* Hover to see snippet of the text</span>
+            </div>
         </div>
         <div class="col-md-6">
-            <h3>Your entry...</h3>
+            <h3>Your new entry...</h3>
             <form method="get">
-                <textarea class="form-control" ng-model="note" id="enter" name="comment" cols="10" rows="20" placeholder="Your new note..."></textarea>
+                <input type="text" class="form-control" id="note-title" ng-model="noteTitle" placeholder="Your Title...">
+                <textarea class="form-control" ng-model="note" id="note" name="note" cols="10" rows="20" placeholder="Your new note..."></textarea>
                 
                 <input type="submit" class="btn btn-success pull-right" id="btn-add-note" value="submit" ng-click="addNote()" />
             </form>
@@ -51,6 +53,7 @@
                 
             </div>
         </div>
+         
         
     </div>
 </div>

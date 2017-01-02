@@ -1,42 +1,38 @@
 app.
     controller('NotesController', ['$scope', '$location', '$http', 
         function($scope, $location, $http){
+
+                $('[data-toggle="popover"]').popover({ trigger: 'hover' })
+            console.log($('[data-toggle="popover"]'))
+            /* FETCH USER DATA */
+
             var user
+
             getUser()
-            $scope.users = []
-            checkData()
-            getUsers()
-            console.log(user)
-            $scope.email = user.email
-
-            $http({
-                method: 'post',
-                url: 'api/getNotes.php',
-                data: user
-            }).success(function(data){
-                $scope.list = data
-                console.log($scope.list)
-            })
-
-            $scope.currentPage = 0
-            $scope.pageSize = 5
-            $scope.numberofPages = function(){
-                return Math.ceil($scope.list.length/$scope.entryLimit)
-            }
+            checkUser()
+            getNotes()            
             
-            $scope.noteClick = function(i){
-                console.log(i)
-            }
+            $scope.email = user.email
+            
 
+            
+            /* ADD NEW NOTE */
 
             $scope.addNote = function() {
+                // REMOVE PREVIOUS FEEDBACK
                 removeFeedback()
+
+                // FETCH THE NEW NOTE
+
                 var newNote = {
+                    title: $scope.noteTitle,
                     note: $scope.note,
                     email: user.email
                 }
                 console.log(newNote)
-                if(newNote.note && newNote.email){
+                // SEND NON EMPTY NOTE AND EMAIL TO DB
+
+                if(newNote.note && newNote.email && newNote.title){
                     $http({
                         url: "api/addNote.php",
                         method: "POST",
@@ -44,7 +40,12 @@ app.
                     }).success(function(data){
                         console.log(data)
                         if(data.message === "success"){
+                            // SHOW FEEDBACK
                             showFeedback(true, "Thanks! You added a new entry.")
+                            // CLEAR THE NOTE FIELD
+                            $scope.note = ""
+                            // RELOAD THE NOTES
+                            getNotes()
                         } else {
                             showFeedback(false, "Sorry, there was problem with your request.")
                         }
@@ -53,6 +54,8 @@ app.
                     showFeedback(false, "You can not submit an empty note!")
                 }
             }
+
+            /* USER LOGOUT */
 
             $scope.logout = function(){
                 $http({
@@ -70,9 +73,7 @@ app.
             }
 
 
-
-
-
+            /* FETCH USER DATA FUNCTIONS */
 
             function getUser(){
                 user = {
@@ -82,7 +83,7 @@ app.
             }
 
 
-            function checkData(){
+            function checkUser(){
 
                 // CONNECT TO API 
 
@@ -106,6 +107,20 @@ app.
 
             }
 
+            function getNotes(){
+                $http({
+                method: 'post',
+                url: 'api/getNotes.php',
+                data: user
+                }).success(function(data){
+                    console.log(data)
+                    $scope.list = data
+                    $scope.list.reverse()
+                })
+            }
+
+            /* FEEDBACK TO NEW NOTES */
+
             function showFeedback(isSuccess, msg){
                 var el = angular.element(document.querySelector("#message-box"))
                 console.log(msg)
@@ -125,10 +140,23 @@ app.
                 el.html("")
             }
 
-            function getUsers(){
-                
+            
+
+            /* PAGINATION  */
+           
+            $scope.currentPage = 0
+            $scope.pageSize = 5
+            $scope.numberofPages = function(){
+                return Math.ceil($scope.list.length/$scope.entryLimit)
+            }
+            
+            $scope.noteClick = function(text, title){
+                $scope.noteTitle = title
+                $scope.note = text
             }
 
            
-            
+                $('[data-toggle="popover"]').popover();   
+          
+                        
 }])

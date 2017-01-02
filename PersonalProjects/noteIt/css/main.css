@@ -59,3 +59,19 @@ label {
 	margin-top: 3em;
 	margin-right: 2em;
 }
+
+#note-time{
+	color: black;
+	font-size: 1.1em;
+}
+#note-text{
+	font-size: 0.9em;
+}
+
+#note-title{
+	margin: 2em 0em 1em 0em;
+}
+
+#info-text{
+	margin-top: 1em;
+}
