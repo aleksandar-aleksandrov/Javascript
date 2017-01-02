@@ -1,0 +1,14 @@
+.features .col-lg-4 {
+  margin-bottom: 5em;
+  margin-top: 6em;
+  text-align: center;
+}
+
+.features .col-lg-4 h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.features #center-feature {
+    margin-top: 0em;
+}
