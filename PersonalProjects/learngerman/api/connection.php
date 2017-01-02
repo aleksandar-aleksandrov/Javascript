@@ -1,11 +1,10 @@
 <?php
 
-    $server = "localhost";
-    $username = "root";
+    $server = "";
+    $username = "";
     $password = "";
-    $db = "learn_german";
 
-    $conn = mysqli_connect($server, $username, $password, $db);
+    $conn = mysqli_connect($server, $username, $password, $username);
 
     if(!$conn) {
         die('Connection failed: '. mysqli_connect_error());

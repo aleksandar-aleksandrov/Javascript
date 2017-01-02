@@ -2,7 +2,7 @@
 
     // GET CONNECTION
     include('connection.php');
-    include('globalVariables.php');
+    //include('globalVariables.php');
 
     // RECEIVE JSON DATA FROM ANGULARJS
     $postdata = file_get_contents("php://input");
@@ -11,9 +11,9 @@
 
     // THE RESULTS WILL BE STORRED HERE
     $word = array();
-    
+
     // QUERY FOR ONE WORD IN THE CORRECT LEVEL
-    $query = "SELECT * FROM roundTwo WHERE level='$level' ORDER BY rand() LIMIT 1";
+    $query = "SELECT * FROM roundtwo WHERE level='$level' ORDER BY rand() LIMIT 1";
 
     // SEND TO DB 
     $result = mysqli_query($conn, $query) or die(mysqli_error_list());
@@ -31,7 +31,8 @@
     if(count($word) > 0) {
         echo json_encode($word);
     } else {
-        echo json_encode($error);
+        $data = array("error" => $error);
+        echo json_encode($data);
     }
     
 

@@ -1,9 +1,10 @@
 angular.module('learn-german.controllers')
-    .controller('RoundTwoController', ['$scope','$location', '$http','user', function($scope, $location, $http,user){
+    .controller('RoundTwoController', ['$scope','$location', '$http', 'user', function($scope, $location, $http, user){
         //Prevent from going back to redo rounds and skipping rounds
         if(user.secondRound){
             $location.path('/error')
         }
+        
         
         // ROUND TWO
         
@@ -36,7 +37,7 @@ angular.module('learn-german.controllers')
                 levelNumerical: user.levelNumerical
             }
         }).success(function(data){
-            if(data != 'error'){
+            if(data.error !== 'error'){
                 $scope.word = data.germanWord.toUpperCase()
                 $scope.description = data.desc
                 $scope.length = $scope.word.length

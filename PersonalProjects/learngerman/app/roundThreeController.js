@@ -13,7 +13,7 @@ angular.module('learn-german.controllers')
         $scope.level = user.level
         $scope.points = user.points
 
-        var data = {
+        var senddata = {
             levelNumerical: user.levelNumerical
         }
 
@@ -27,17 +27,17 @@ angular.module('learn-german.controllers')
         $http({
             url: 'api/roundThree.php',
             method: 'post',
-            data: data
-        }).success(function(data) {
-            if(data !== 'error'){
+            data: senddata
+        }).success(function(data){
+            if(data.error !== 'error'){
                 $scope.sentences = data
                 generateWords()
             } else {
-                location.path('/error')
+                $location.path('/error')
             }
             
         }).error(function(data){
-            location.path('/error')
+            $location.path('/error')
         })
 
         
@@ -46,7 +46,6 @@ angular.module('learn-german.controllers')
         $scope.check = function(){
             $scope.isDisabled = true;
             var inputs = angular.element(document.getElementsByClassName('input-missing-word'))
-            console.log(inputs)
             var points = 0
             for(var i = 0; i < inputs.length; i++) {
                 if($scope.sentences[i].missingWord === inputs[i].value){
@@ -70,7 +69,6 @@ angular.module('learn-german.controllers')
 
         $scope.showAnswers = function(){
             var inputs = angular.element(document.getElementsByClassName('input-missing-word'))
-            console.log(inputs)
             var points = 0
             for(var i = 0; i < inputs.length; i++) {
                 inputs[i].value = $scope.sentences[i].missingWord

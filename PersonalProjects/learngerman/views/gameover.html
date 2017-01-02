@@ -1,20 +1,18 @@
-<div class="row">
-    <div class="container container-end">
-        <div class="col-md-offset-1 col-md-10">
-            <span class="over-text">
-            </span>
-        </div>
-        <div class="col-md-offset-1 col-md-10">
-            <div class="buttons-group">
-                <button class="btn btn-info btn-restart" ng-show="isShown" ng-click="startOver()">Start Again!</button>
-                <button class="btn btn-info btn-share" ng-show="isShown" ng-click="startOver()">f | Share On Facebook!</button>
+<div class="gameover">
+    <div class="row">
+        <div class="container container-end">
+            <div class="col-md-offset-1 col-md-10">
+                <span class="over-text">
+                </span>
+            </div>
+            <div class="col-md-offset-1 col-md-10">
+                <div class="buttons-group">
+                    <button class="btn btn-danger btn-restart" ng-show="isShown" ng-click="startOver()">Start Again!</button>
+                    <button class="btn btn-info btn-share" socialshare socialshare-provider="facebook" socialshare-text="Learn German" socialshare-hashtags="german, learn" socialshare-url="http://tothethird.net/learngerman" ng-show="isShown" >f | Share On Facebook!</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="container container-buttons">
-        
-    </div>
+
 </div>

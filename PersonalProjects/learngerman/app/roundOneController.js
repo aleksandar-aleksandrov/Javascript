@@ -1,5 +1,6 @@
 angular.module('learn-german.controllers')
-    .controller('RoundOneController', ['$scope','$location', '$http', 'centerElement', 'user', function($scope, $location, $http, centerElement, user){
+    .controller('RoundOneController', ['$scope', '$location', '$http', 'centerElement', 'user', 
+    function($scope, $location, $http, centerElement, user){
         //Prevent from going back to redo rounds and skipping rounds
         if(user.firstRound){
             $location.path('/error')
@@ -30,24 +31,17 @@ angular.module('learn-german.controllers')
                 levelNumerical: user.levelNumerical
             }
         }).success(function(data){
-            
-            if(data !== 'error'){
-                $scope.words = data
-                dict = data
-            } else {
-                location.path('/error')
-            }
-            
-   
+            $scope.words = data
+            dict = data
         }).error(function(data, status, headers, config){
-            location.path('/error')
+            console.log(data)
+            $location.path('/error')
         })
         
         
         //FUNCTIONS
         
-        // Center Element Vertically
-        centerElement($(".first-round"))
+        
 
         //Check the user inputs
         $scope.checkAnswers = function(){

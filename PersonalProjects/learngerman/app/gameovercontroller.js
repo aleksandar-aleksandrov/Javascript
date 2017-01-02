@@ -1,8 +1,16 @@
 angular.module('learn-german.controllers')
-    .controller('GameOverController', ['$scope', '$location', 'user', function($scope, $location, user){
+    .controller('GameOverController', ['$scope', '$location', 'centerElement', 'user', 'Socialshare', 
+        function($scope, $location, centerElement, user, Socialshare){
 
+        // VARIABLES
+
+        
         var msg = "Thanks for playing! You got " + user.points + "/300 points!<br/>Share your results or start over..."
         $scope.isShown = false
+
+        //FUNCTIONS
+
+        centerElement($(".gameover"))
 
         $(function(){
             $(".over-text").typed({
@@ -15,7 +23,9 @@ angular.module('learn-german.controllers')
             })
         })
 
+        
+       
         $scope.startOver = function(){
             $location.path('/')
         }
-    }])
+}])

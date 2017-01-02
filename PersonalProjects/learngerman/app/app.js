@@ -1,4 +1,4 @@
-var app = angular.module('learn-german', ['ngRoute', 'learn-german.controllers'])
+var app = angular.module('learn-german', ['ngRoute', '720kb.socialshare', 'learn-german.controllers'])
 app.config(['$routeProvider', function($routeProvider){
         $routeProvider.when('/', {
             templateUrl: 'views/begin.html',
@@ -39,10 +39,10 @@ app.value('user', {
     thirdRound: false
  })
 
+
 app.factory('centerElement', [function(){
      return function(element){
         element.css("position","absolute")
         element.css("top", Math.max(0, (($(window).height() - $(element).outerHeight()) / 3) + $(window).scrollTop()) + "px")
-        return this
      }
 }])

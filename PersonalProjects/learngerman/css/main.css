@@ -7,7 +7,6 @@ html, body {
     color: rgba(202, 203, 194, 1);
     font-family: 'Gloria Hallelujah', cursive;
     font-family: 'Indie Flower', cursive;
-    margin-bottom: 3em;
 }
 
 .roboto-font {
@@ -52,9 +51,7 @@ html, body {
     height: 6em;
 }
 
-.button-group {
-    margin-left: 13em;
-}
+
 
 
 /* RULES.HTML */
@@ -86,6 +83,7 @@ html, body {
     text-align: center;
     margin-bottom: 2%;
 }
+
 .round-title{
     font-size: 5em;
 }
@@ -93,10 +91,13 @@ html, body {
 
 .round-one-area{
     background-color: rgba(221, 211, 253, 0.3);
-    padding: 1em;
+    padding: 0.5em 0.5em 1em 0.5em;
     border-radius: 1em;
 }
 
+.col-english{
+    margin-right: 5em;
+}
 
 .german-words{
     font-size: 2em;
@@ -117,6 +118,7 @@ html, body {
 }
 
 /* Round Two */
+
 #round-two-canvas{
     background-color: rgba(202, 203, 194, 1);
     width: 100%;
@@ -184,18 +186,12 @@ html, body {
 
 /* GAMEOVER */
 
-.rotate{
-    margin-top: 1em;
-    font-size: 2em;
-    transform: rotate(340deg);
-}
 
 .text-lead{
     font-size: 3em;
 }
 
 .container-end {
-    margin-top: 20em;
     text-align: center;
 }
 

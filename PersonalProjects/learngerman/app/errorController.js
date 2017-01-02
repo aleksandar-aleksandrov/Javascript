@@ -1,6 +1,8 @@
 angular.module('learn-german.controllers')
     .controller('ErrorController', ['$scope', '$location','user', function($scope, $location, user){
         
+        // FUNCTIONS
+        
         $scope.goBack = function(){
             resetValues()
             $location.path('/')

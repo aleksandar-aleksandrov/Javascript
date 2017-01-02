@@ -11,26 +11,30 @@
 
     // Connect and send query to DB
 
-    $query = "SELECT * FROM roundthree WHERE level='$level' ORDER BY rand() LIMIT 5";
+    $query = "SELECT DISTINCT * FROM roundthree WHERE level='$level' ORDER BY rand() LIMIT 5";
 
     $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-    $senddata = array();
+    $dataToSend = array();
 
     // Fetch the results
     while($row = mysqli_fetch_array($result)) {
-        array_push($senddata, array(
+        //echo json_encode($row['missingWord']);
+        array_push($dataToSend, array(
             "firstPart" => $row['firstPart'],
             "secondPart" => $row['secondPart'],
             "missingWord" => $row['missingWord']
         ));
     }
-    
+
+    //echo json_encode("halp");
+    //echo $dataToSend;
     // Send results back to AngularJS
 
-    if($senddata) {
-        echo json_encode($senddata);
+    if(count($dataToSend) > 0) {
+        echo json_encode($dataToSend);
     } else {
-        echo $error;
+        $dataToSend = array("error" => $error);
+        echo json_encode($dataToSend);
     }
     
 
