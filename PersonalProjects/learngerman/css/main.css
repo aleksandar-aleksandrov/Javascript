@@ -27,6 +27,12 @@ html, body {
     text-align: center;
 }
 
+.popover {
+    background-image: white;
+    color: #4D2D73;
+    font-size: 1.3em;
+    font-weight: 700;
+}
 
 .btn-init{
     font-size: 2em;

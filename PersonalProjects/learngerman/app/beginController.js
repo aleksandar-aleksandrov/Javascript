@@ -1,7 +1,7 @@
 angular.module('learn-german.controllers')
     .controller('BeginController', ['$scope', '$location', 'centerElement' ,'user', function($scope, $location, centerElement, user){
         // Reset User VARIABLES
-
+        $('[data-toggle="popover"]').popover()
         function resetValues(){
             user.level = 'Beginner'
             user.levelNumerical = '1'
@@ -47,23 +47,5 @@ angular.module('learn-german.controllers')
             $location.url("/choose-level")
         }
 
-        //Function for notification
-        //NOTYJS is used as additional library
 
-        $scope.showNoty = function(){
-            noty({
-                type: 'alert',
-                theme: 'defaultTheme',
-                text: 'Embrace the pain',
-                animation: {
-                    open: {height: 'toggle'},
-                    close: {height: 'toggle'},
-                    easing: 'swing',
-                    speed: 500
-                },
-                layout: 'bottom',
-                timeout: '3000'
-
-            })
-        }
-    }])
+}])

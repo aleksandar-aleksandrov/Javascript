@@ -4,7 +4,9 @@
             <h1 class="begin-title"></h1>
             <div class="row">
                 <button class="btn btn-primary btn-init" id="btn-init-yes" ng-click="chooseLevel()" ng-show="isShown">Yes, of course.</button>
-                <button class="btn btn-danger btn-init" id="btn-init-no" ng-click="showNoty()" ng-show="isShown">No, please no.</button>
+                <button class="btn btn-danger btn-init" id="btn-init-no" ng-show="isShown"
+                data-toggle="popover" data-placement="bottom" data-content="Embrace the pain">
+                No, please no.</button>
             </div>
         </div>
     </div>

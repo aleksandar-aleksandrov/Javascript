@@ -172,7 +172,6 @@ angular.module('learn-german.controllers')
 
         function replaceAt(str, index, char) {
             var res = (str.substr(0, index) + char + str.substr(index+1))
-            console.log(res)
             return res
         }
 
