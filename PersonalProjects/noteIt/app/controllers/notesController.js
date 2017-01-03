@@ -2,8 +2,8 @@ app.
     controller('NotesController', ['$scope', '$location', '$http', 
         function($scope, $location, $http){
 
-                $('[data-toggle="popover"]').popover({ trigger: 'hover' })
-            console.log($('[data-toggle="popover"]'))
+            $('[data-toggle="popover"]').popover({ trigger: 'hover' })
+
             /* FETCH USER DATA */
 
             var user
@@ -29,7 +29,8 @@ app.
                     note: $scope.note,
                     email: user.email
                 }
-                console.log(newNote)
+
+                
                 // SEND NON EMPTY NOTE AND EMAIL TO DB
 
                 if(newNote.note && newNote.email && newNote.title){
@@ -38,12 +39,13 @@ app.
                         method: "POST",
                         data: newNote
                     }).success(function(data){
-                        console.log(data)
                         if(data.message === "success"){
                             // SHOW FEEDBACK
                             showFeedback(true, "Thanks! You added a new entry.")
                             // CLEAR THE NOTE FIELD
                             $scope.note = ""
+                            $scope.noteTitle = ""
+                            newNote = null
                             // RELOAD THE NOTES
                             getNotes()
                         } else {
@@ -62,10 +64,6 @@ app.
                     url: "api/logout.php",
                     method: "post",
                     data: user
-                }).success(function(data){
-                    console.log(data)
-                }).error(function(data){
-
                 })
                 localStorage.removeItem("email")
                 localStorage.removeItem("token")
@@ -98,7 +96,6 @@ app.
                             name: data.name
                         }
                     } else {
-                        console.log(data)
                         $location.path('/main')
                     }
                 }).error(function(data){
@@ -109,11 +106,10 @@ app.
 
             function getNotes(){
                 $http({
-                method: 'post',
-                url: 'api/getNotes.php',
-                data: user
+                    method: 'post',
+                    url: 'api/getNotes.php',
+                    data: user
                 }).success(function(data){
-                    console.log(data)
                     $scope.list = data
                     $scope.list.reverse()
                 })
@@ -123,7 +119,6 @@ app.
 
             function showFeedback(isSuccess, msg){
                 var el = angular.element(document.querySelector("#message-box"))
-                console.log(msg)
                 if(isSuccess){
                     el.addClass("alert-success")
                     el.html(msg)
@@ -154,9 +149,5 @@ app.
                 $scope.noteTitle = title
                 $scope.note = text
             }
-
-           
-                $('[data-toggle="popover"]').popover();   
-          
-                        
+               
 }])

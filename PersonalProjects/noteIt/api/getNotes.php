@@ -14,11 +14,6 @@
     $data = array();
 
     while($row = mysqli_fetch_assoc($result)) {
-        /*array_push($data, array(
-            "time" => $row['time'],
-            "title" => $row['title'],
-            "note" => $row['note']
-        ));*/
         array_push($data, new Note($row['title'], $row['note'], '$email', $row['time']));
     }
 

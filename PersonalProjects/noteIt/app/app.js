@@ -1,4 +1,8 @@
-var app = angular.module('chat-app', ['ngRoute', 'ngCookies'])
+/* INITIALIZE APPLICATION */
+
+var app = angular.module('chat-app', ['ngRoute'])
+
+/* CONFIGURE ROUTING */
 
 app.config(['$routeProvider', function($routeProvider){
         $routeProvider.when('/main', {
@@ -15,6 +19,8 @@ app.config(['$routeProvider', function($routeProvider){
         })
     }])
 
+/* FILTERS */
+
 app.filter('startFrom', function(){
     return function(input, start){
         if(input) {
@@ -24,22 +30,3 @@ app.filter('startFrom', function(){
         return []
     }
 })
-
-// Function is taken from https://github.com/cornflourblue/angular-registration-login-example/blob/master/app.js
-
-/*app.run(['$rootScope', '$location', '$cookies', '$http', function($rootScope, $location, $cookies, $http){
-        $rootScope.globals = $cookies.getObject('globals') || {};
-        if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
-        }
-
-        $rootScope.$on('$locationChangeStart', function (event, next, current) {
-            // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/main']) === -1;
-            var loggedIn = $rootScope.globals.currentUser;
-            if (restrictedPage && !loggedIn) {
-                $location.path('/main');
-            }
-        });
-    }])
-*/

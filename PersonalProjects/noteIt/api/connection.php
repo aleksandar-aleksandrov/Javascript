@@ -1,9 +1,9 @@
 <?php
-
+    /* DB VARIABLES*/
     $server = "localhost";
     $username = "root";
     $password = "";
-    $db = "chatapp";
+    $db = "";
 
     $conn = mysqli_connect($server, $username, $password, $db);
 
