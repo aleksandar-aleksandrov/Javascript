@@ -1,6 +1,6 @@
 /* INITIALIZE APPLICATION */
 
-var app = angular.module('chat-app', ['ngRoute'])
+var app = angular.module('noteit', ['ngRoute'])
 
 /* CONFIGURE ROUTING */
 
