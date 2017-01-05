@@ -1,4 +1,4 @@
-var app = angular.module('tothethird', ['ngRoute', 'tothethird.controllers'])
+var app = angular.module('tothethird', ['ngRoute', 'tothethird.controllers', 'ui.bootstrap'])
 
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/', {
@@ -14,9 +14,13 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'views/project.html',
         controller: 'ProjectController',
         activeitem: 'portfolio'
+    }).when('/blog/article/:id/', {
+        templateUrl: 'views/article.html',
+        controller: 'ArticleController',
+        activeitem: 'blog'
     }).when('/contact',{
         templateUrl: 'views/contact.html',
-        controller: 'ContactController'
+        controller: 'MailController'
     })
     .otherwise({  
         redirectTo: '/'
@@ -29,8 +33,7 @@ app.directive('isActive', ['$location', function($location) {
             link: function(scope, element) {
                 scope.location = $location
                 scope.$watch('location.path()', function(currentPath) {
-                    console.log(currentPath)
-                    console.log(element[0].attributes['href'].nodeValue)
+
                     if('#' + currentPath === element[0].attributes['href'].nodeValue) {
                         element.parent().addClass('active')
                     } else {

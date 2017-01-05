@@ -1,0 +1,31 @@
+<!-- Header -->
+<header class="article-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div>
+                    <h1 class="article-title">{{article.title}}</h1>
+                    <hr/>
+                    <p class="lead article-meta">
+                        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                        Posted by {{article.author}} on {{article.date}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="article-text">
+                    {{article.text}}
+                </div>
+                <button class="btn btn-primary pull-left" ng-click="goBlog()">Go Back To Blog</button>
+            </div>
+        </div>
+    </div>
+</article>
