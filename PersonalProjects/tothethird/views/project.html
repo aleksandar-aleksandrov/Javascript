@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-sm-9 col-sm-offset-1">
+        <div class="container project">
+            <div class="col-sm-11">
+                <img src="img/portfolio/{{project.id}}/main.png" class="img-responsive img-project" alt="">    
+
+            </div>
+            <div class="col-sm-8 col-sm-offset-1">
+                <h2><span class="project-attribute">Project Name:</span><h2>
+                <p class="lead project-data">{{project.name}}</p>
+                <h2><span class="project-attribute">Link:</span><h2>
+                <p class="lead project-data"><a href="{{project.link}}">{{project.link}}</a></p>
+                <h2><span class="project-attribute">Github:</span><h2>
+                <p class="lead project-data"><a href="{{project.github}}">{{project.github}}</a></p>
+                <h2><span class="project-attribute">Technologies:</span><h2>
+                <p class="lead project-data">{{project.technologies}}</p>
+                <h2><span class="project-attribute">Description:</span><h2>
+                <p class="lead project-data">{{project.description}}</p>
+                <button class="btn btn-primary pull-left" ng-click="goBack()">Go Back To Portfolio</button>
+            </div>
+        </div>
+    </div>
+</div>

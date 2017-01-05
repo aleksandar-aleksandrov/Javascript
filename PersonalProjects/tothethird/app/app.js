@@ -10,6 +10,10 @@ app.config(['$routeProvider', function($routeProvider){
     }).when('/blog',{
         templateUrl: 'views/blog.html',
         controller: 'BlogController'
+    }).when('/portfolio/project/:id', {
+        templateUrl: 'views/project.html',
+        controller: 'ProjectController',
+        activeitem: 'portfolio'
     }).when('/contact',{
         templateUrl: 'views/contact.html',
         controller: 'ContactController'
