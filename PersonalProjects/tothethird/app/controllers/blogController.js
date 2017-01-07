@@ -9,7 +9,6 @@ angular.module('tothethird.controllers')
                 url: 'api/getArticles.php'
             }).success(function(data){
                 $scope.articles = data.reverse()
-                console.log(data)
             })
         }
     }])

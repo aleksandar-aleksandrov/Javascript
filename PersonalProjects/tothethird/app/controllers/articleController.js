@@ -1,9 +1,8 @@
 angular.module('tothethird.controllers')
     .controller('ArticleController', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location){
-        $('.carousel').carousel()
-        $scope.id = $routeParams.id;
+
+        $scope.id = $routeParams.id
         $scope.article
-        console.log($routeParams.id)
         getArticle()
 
         function getArticle(){
@@ -12,12 +11,17 @@ angular.module('tothethird.controllers')
                 url: "api/getArticle.php",
                 data: { id: $scope.id }
             }).success(function(data){
-                console.log(data);
-                $scope.article = data
+                if(!data.error){
+                    $scope.article = data
+                } else {
+                    $location.path("/error")
+                }
+                
             }).error(function(data){
                 $location.path("/error")
             })
         }
+
         $scope.goBlog = function(){
             $location.path("/blog")
         }

@@ -8,13 +8,13 @@ angular.module('tothethird.controllers')
                 url: 'api/getProjects.php'
             }).success(function(data){
                 if(data){
-                    console.log(data)
-                    $scope.projects = data;
-                    $scope.projects.reverse();
-                    console.log($scope.projects);
+                    $scope.projects = data
+                    $scope.projects.reverse()
                 }else{
                     $location.path('/error')
                 }
+            }).error(function(data){
+                $location.path('/error')
             })
         }
 

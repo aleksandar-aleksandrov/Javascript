@@ -1,9 +1,8 @@
-var app = angular.module('tothethird', ['ngRoute', 'tothethird.controllers', 'ui.bootstrap'])
+var app = angular.module('tothethird', ['ngRoute', 'tothethird.controllers'])
 
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/', {
-        templateUrl: 'views/home.html',
-        controller: 'HomeController'
+        templateUrl: 'views/home.html'
     }).when('/portfolio',{
         templateUrl: 'views/portfolio.html',
         controller: 'PortfolioController'
@@ -21,6 +20,9 @@ app.config(['$routeProvider', function($routeProvider){
     }).when('/contact',{
         templateUrl: 'views/contact.html',
         controller: 'MailController'
+    }).when('/error',{
+        templateUrl: 'views/error.html',
+        controller: "ErrorController"
     })
     .otherwise({  
         redirectTo: '/'
